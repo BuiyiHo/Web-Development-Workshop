@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Toys House</title>
+</head>
+<body>
+<h1>Toys House--A Magical Store</h1>
+<fieldset>
+    <legend><b>ITEM LIST</b></legend>
+<table  id="table" >
+    		
+    	</table>
+</fieldset>
+
+<fieldset><legend>CART</legend>
+    <div id="cart"></div>
+</fieldset>
+<fieldset><legend>CUSTOM INFO</legend>
+    <form id="form" method="post" action="acknowledgement.php">
+        <div>
+            <select name="call">
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+            </select>
+        </div>
+        </br>
+        <div>
+            <label>first name:</label><input name="firstname" type="text" required>
+            <label>family name:</label><input name="familyname" type="text" required>
+        </div>
+        </br>
+        <div>
+            <label>address:</label><input type="text" name="address" required>
+            <select name="province">
+                <option value="Guangdong">Guangdong</option>
+                <option value="Shanghai">Shanghai</option>
+            </select>
+        </div>
+        </br>
+        <div>
+            <label>phone number:</label><input name="phonenumber" type="text" pattern="^[0-9]+$" required>
+        </div>
+        </br>
+        <input type="submit">
+    </form>
+</fieldset>
+<script src="items.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
