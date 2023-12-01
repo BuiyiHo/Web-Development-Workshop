@@ -1,0 +1,79 @@
+div.wai{
+		position:relative;
+		margin:auto;
+		max-width:1500px;
+		height:825px;
+		background: url(image/123.jpg);
+	}
+	.center1{
+		text-align:center;
+		text-shadow:0 0 10px;
+		color:#fff;
+
+	}
+	div.login{
+		width: 330px;
+		height: 350px;
+		background-color: white;
+		position: fixed;
+		background:rgba(255,255,255,0.5);
+    	top: 0px;
+    	left: 0px;
+    	right: 0px;
+    	bottom: 0px;
+    	margin: auto;
+    	border-radius: 15px;
+		border:1px dotted tomato;
+	}
+	h1.center1{
+		font-size: 70px;
+	}
+	p.register{
+		font-size: 20px;
+	}
+	.register{
+		color: black;   
+    	text-shadow:0 0 10px;   
+    	letter-spacing: 1px;   
+    	text-align: center;
+    	 
+	}
+	.Register{
+		width: 330px;
+		height: 400px;
+		background-color: white;
+		position: fixed;
+		background:rgba(255,255,255,0.5);
+    	top: 0px;
+    	left: 0px;
+    	right: 0px;
+    	bottom: 0px;
+    	margin: auto;
+    	border-radius: 15px;
+		border:1px dotted tomato;
+	}
+	.inbox{
+		position:relative;
+		left:20px;
+		width: 245px;
+		border-radius: 15px;
+		margin: 5px;
+	}
+	a.button{
+		background-color: #fff;
+    	width: 200px;
+    	height: 500px;
+    	border-radius: 15px;
+    	padding: 0 30px;
+    	left: 0%;
+    	top: 50%;
+    	transform: translate(-50%,-50%);
+		position: relative;
+		margin: 10px;
+	}
+	p.link{
+		margin: 20px;
+	}
+	input{
+		height: 30px;
+	}

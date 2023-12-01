@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 align="center" style="color: white;">{% block title %} Generate your yearly report {% endblock %}</h1>
+    <form action="{{ url_for('report.report') }}" onsubmit="return validInput()" method = 'get'>
+		<label for="year" style="color: white;">Year:</label><br>
+		<input type="text" id="year" name="year"><br>
+		<input type="submit" value="Generate">
+		<input type="submit" value="Download" formmethod = 'post'>
+		<!-- 展示report -->
+		<!-- <button type="'submit" name="generate" value="show">Generate Report</button>
+		<button type="'submit" name="generate" value="download" formmethod="get">Download Report</button> -->
+	</form>
+<script>
+	function validInput(){
+		const input = document.getElementById("year").value;
+		if(isNaN(input) || input.length !==4){
+			alert("Invalid input.")
+			return false;
+		}
+		return ture;
+	}
+</script>
+{% endblock %}

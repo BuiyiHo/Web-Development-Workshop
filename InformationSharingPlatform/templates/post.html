@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{% block title %} {{ post['title'] }} {% endblock %}</h2>
+<span class="badge badge-primary" style="color: white;">{{ post['created'] }}</span>
+    <p><font size = "3", color = #5f9ea0>Knowledge Point:</font></p>
+    <p><font size = "5", color="#00008b">{{ post['content'] }}</font></p>
+    <p><font size = "3", color = #5f9ea0>University name:</font></p>
+    <p><font size = "5", color="#00008b">{{ post['university'] }}</font></p>
+    <p><font size = "3", color = #5f9ea0>Project name:</font></p>
+    <p><font size = "5", color="#00008b">{{ post['project'] }}</font></p>
+<hr>
+<form action="{{ url_for('knowledge.delete', post_id=post['id']) }}" method="POST">
+    <input type="submit" value="Delete" class="btn btn-danger btn-sm"
+        onclick="return confirm('Are you sure to delete?')">
+</form>
+
+{% endblock %}

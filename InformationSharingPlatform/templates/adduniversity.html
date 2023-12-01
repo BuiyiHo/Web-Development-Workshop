@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 align="center" style="color: white;">{% block title %} Add University {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="university" align="center" style="color: white;">University Name:</label>
+        <input type="text" name="university" class="form-control" value="{{ request.form['university'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="program" align="center" style="color: white;">Program Name:</label>
+        <input name="program" class="form-control" value="{{ request.form['program'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="qs" align="center" style="color: white;">QS rank:</label>
+        <input name="qs" class="form-control" value="{{ request.form['qs'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="place" align="center" style="color: white;">Place:</label>
+        <input name="place" class="form-control" value="{{ request.form['place'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </div>
+</form>
+
+
+{% endblock %}

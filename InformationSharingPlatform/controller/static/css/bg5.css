@@ -1,0 +1,17 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background: url(../images/bg.jpg)  no-repeat center 0px;
+	background-size: cover;
+
+
+     background-attachment : fixed;
+     background-position: center 0;
+     background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+
+}

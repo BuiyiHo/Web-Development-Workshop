@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1 style="color: white;">{% block title %} Change Password {% endblock %}</h1>
+
+
+<form method="post">
+    <div class="form-group">
+        <label for="oldpassword" align="center" style="color: white;">Old Password</label>
+        <input type="text" name="oldpassword" placeholder="Old Password" class="form-control"
+            ></input>
+    </div>
+
+    <div class="form-group">
+        <label for="newpassword" align="center" style="color: white;">New Password</label>
+        <input type="text" name="newpassword" placeholder="New Password" class="form-control"
+            ></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" value="change" name="change" class="btn btn-primary">submit</button>
+        <button type="submit" value="back" name="back" class="btn btn-primary">Back</button>
+    </div>
+
+</form>
+
+
+{% endblock %}
+<!-- value="{{ request.form['newpassword'] }}" -->

@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <title>Shop Page</title>
+	<link rel="stylesheet" href="CssOfShop.css" type="text/css">
+  </head>
+  
+  <form action="PHPOfShop.php" method="post">
+  <body>
+  <p>SHOP</p>
+
+    	
+    	<table width="100%" bgcolor="#2c3e50" align="center">
+    		<th>
+    			<font color="#ffffff">International BOOK</font>
+    		</th>
+    	</table>
+    	
+    	<table width="100%" align="center" bgcolor="#7591AD">
+    		<tr>
+    			<td align="center"><img src="img/Lolita.png"/></td>   				
+    			<td align="center"><img src="img/Liber Novus.jpg"/></td>							
+    			<td  align="center"><img src="img/当代英雄.jpg"/></td>		
+    			<td align="center"><img src="img/The Crowd A Study of the Popular Mind.jpg"/></td>				
+    		</tr>
+    		<tr>
+    			<td align="center">BookName：Lolita<br>Author: Vladimir Vladimirovich Nabokov<br>Price：48 RMB</td>
+    			<td align="center">BookName：Liber Novus<br>Author: C.G.Jung<br>Price：112 RMB</td>
+    			<td align="center">BookName：Герой нашего времени<br>Author：Михаил Юрьевич Лермонтов<br>Price：38 RMB</td>				
+   			    <td align="center">BookName：The Crowd:A Study of the Popular Mind<br>Author: Gustave Le Bon<br>Price：114 RMB</td>	
+    		</tr>
+			<tr align="center">
+			<td><input name="QN1" oninput="if(value<=0)value=0" value="0" type="number"></input></td>
+			<td><input name="QN2" oninput="if(value<=0)value=0" value="0" type="number"></input></td>
+			<td><input name="QN3" oninput="if(value<=0)value=0" value="0" type="number"></input></td>
+			<td><input name="QN4" oninput="if(value<=0)value=0" value="0" type="number"></input></td>
+			</tr>
+			
+		<table width="100%" bgcolor="#2c3e50">
+    		<th>
+    			<font color="#ffffff">Chinese BOOK</font>
+    		</th>
+    	</table>
+    	
+    	<table width="100%" bgcolor="#7591AD">
+    		<tr>
+    			<td align="center"><img src="img/西游.jpg"/></td>   				
+    			<td align="center"><img src="img/红楼.jpg"/></td>							
+    			<td  align="center"><img src="img/水浒.jpg"/></td>		
+    			<td align="center"><img src="img/三国.jpg"/></td>				
+    		</tr>
+    		<tr>
+    			<td align="center">BookName：The Journey to the West<br>Author: Chengen Wu<br>Price：36 RMB</td>				
+    			<td align="center">BookName：Dream of the Red Chamber<br>Author: Xueqin Cao<br>Price：46 RMB</td>				
+    			<td align="center">BookName：The Story by the Water Margin<br>Author:Naian Shi<br>Price：39 RMB</td>				
+    			<td align="center">BookName：The Romance of the Three Kindoms<br>Author: Guanzhong Luo<br>Price：25 RMB</td>				
+    		</tr>
+			<tr align="center">
+				<td><input name="QN5" oninput="if(value<=0)value=0" value="0" type="number"></input></td>
+				<td><input name="QN6" oninput="if(value<=0)value=0" value="0" type="number"></input></td>
+				<td><input name="QN7" oninput="if(value<=0)value=0" value="0" type="number"></input></td>
+				<td><input name="QN8" oninput="if(value<=0)value=0" value="0" type="number"></input></td>
+			</tr>
+
+    	</table>
+    	
+    	<table width="100%" bgcolor="#2c3e50" align="center">
+    		<tr>
+			<td><h3 align="center">Customer Information</h3>
+				<div class = "Cus_info">
+				<select name="Appellation" >
+      				<option value="Miss.">Miss.</option>
+      				<option value="Mr.">Mr.</option>
+      				<option value="Mrs.">Mrs.</option>
+    			</select><br>
+				<input id="cinfo" type="text"  name = "FN" placeholder="Your FirstName"></input>
+				<input id="cinfo" type="text"  name = "LN" placeholder="Your LastName"></input><br>
+		
+				<input id="cinfo" type="text"  name = "Account" placeholder="Your Account" required></input>
+				<input id="cinfo" type="text"  name = "PW" placeholder="Your Password" required></input><br>
+				<input id="cinfo" type="text"  name = "Address" placeholder="Your Address" ></input>
+    			<input type="submit" onclick="myFuction()" value="Sub"></input>
+			</div></td>
+			<td><input type="submit" value="Back" onclick="goback()"></input></td>
+    		</tr>
+    	</table>
+	
+	</form>
+	</body>
+<script>
+function myFuction(){
+	alert("Order generation under way!")
+}
+function goback(){
+		alert("It will go back to Index page!");
+		location.href = "http://stuweb.uic.edu.cn/q030026047/final/Index.html";
+}
+</script>
+</html>

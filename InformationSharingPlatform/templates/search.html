@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="color: white;">{% block title %} Offers though GPA {% endblock %}</h1>
+    {% for post in pos %}
+
+        <p><font size = "3", color = #5f9ea0>University name:</font><font size = "5", color="white">{{ post['university'] }}</font></p>
+        <p><font size = "3", color = #5f9ea0>program:</font><font size = "5", color="white">{{ post['program'] }}</font></p>
+        <p></p>
+    <hr>
+    {% endfor %}
+{% endblock %}

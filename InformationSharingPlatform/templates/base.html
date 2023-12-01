@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/bootstrap.min.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename= 'css/bg5.css') }}">
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url_for('UICer.about')}}">About GPS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                {%if session['status']=='alumni'%}
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('knowledge.new')}}">Add Knowledge Points</a>
+            </li>
+                {%endif%}
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('knowledge.Knowledge')}}">View knowledge points</a>
+            </li>
+                {%if session['status']=='admin'%}
+                {%endif%}
+                 <li class="nav-item">
+                <a class="nav-link" href="{{url_for('search.search_gpa')}}">Search though GPA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('search.search_u_name')}}">Search through University Name</a>
+            </li>
+                {%if session['status']=='alumni'%}
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('experience.share_e_experience')}}">Share Employment Experience</a>
+            </li>
+                {%endif%}
+                {%if session['status']=='admin'%}
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('report.report')}}">Report</a>
+            </li>
+                {%endif%}
+                {%if session['status']=='admin'%}
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('report.makereport')}}">MakeReport</a>
+            </li>
+                {%endif%}
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('report.viewreport')}}">ViewReport</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('experience.view')}}">View Employment Experience</a>
+            </li>
+                {%if session['status']=='alumni'%}
+             <li class="nav-item">
+                <a class="nav-link" href="{{url_for('offer.provideOffer_C')}}">Provide Company Offer</a>
+            </li>
+                {%endif%}
+                {%if session['status']=='alumni'%}
+             <li class="nav-item">
+                <a class="nav-link" href="{{url_for('offer.provideOffer_T')}}">Provide Taught Offer</a>
+            </li>
+                {%endif%}
+                {%if session['status']=='alumni'%}
+             <li class="nav-item">
+                <a class="nav-link" href="{{url_for('offer.provideOffer_R')}}">Provide Research Offer</a>
+            </li>
+                {%endif%}
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        {% for message in get_flashed_messages() %}
+        <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+        {% block content %} {% endblock %}
+    </div>
+
+
+    <script src="{{url_for('static', filename='js/jquery.slim.min.js')}}" ></script>
+    <script src="{{url_for('static', filename='js/popper.min.js')}}" ></script>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}" ></script>
+
+   </body>
+</html>

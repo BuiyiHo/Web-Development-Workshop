@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="color: white;">{% block title %} Offer information in {{ university }} {% endblock %}</h1>
+    {% for amount in number %}
+
+        <p><font size = "3", color="#ffe4c4">Total offer number:</font><font size = "5", color="white">{{ amount['amount'] }}</font></p>
+<hr>
+    {% endfor %}
+    {% for post in pos %}
+        <a><font size = "3", color="#ffe4c4">University name:</font><font size = "5", color="white">{{ post['university'] }}</font></a>&nbsp;&nbsp;
+        <a><font size = "3", color="#ffe4c4">QS:</font><font size = "5", color="white">{{ post['qs'] }}</font></a>&nbsp;&nbsp;
+        <a><font size = "3", color="#ffe4c4">GPA:</font><font size = "5", color="white">{{ post['gpa'] }}</font></a>&nbsp;&nbsp;
+        <a><font size = "3", color="#ffe4c4">Offer time:</font><font size = "5", color="white">{{ post['date'] }}</font></a>
+        <p></p>
+    <hr>
+    {% endfor %}
+
+{% endblock %}

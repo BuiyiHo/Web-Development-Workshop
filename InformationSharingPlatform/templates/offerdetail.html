@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{% block title %} Welcome to the yearly report of {{ post['offertime'] }} {% endblock %}</h2>
+
+<span class="badge badge-primary" style="color: white;">{{ post['created'] }}</span>
+    <p><font size = "3", color = #5f9ea0>University:</font></p>
+    <p><font size = "5", color="#00008b">{{ post['Universityname'] }}</font></p>
+    <p><font size = "3", color = #5f9ea0>Offer Time:</font></p>
+    <p><font size = "5", color="#00008b">{{ post['offertime'] }}</font></p>
+    <p><font size = "3", color = #5f9ea0>Project name:</font></p>
+    <p><font size = "5", color="#00008b">{{ post['projectname'] }}</font></p>
+    <p><font size = "3", color = #5f9ea0>Place:</font></p>
+    <p><font size = "5", color="#00008b">{{ post['place'] }}</font></p>
+<hr>
+{% endblock %}

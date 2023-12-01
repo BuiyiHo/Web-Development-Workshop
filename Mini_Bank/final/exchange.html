@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Currency Transfer</title>
+	<link rel="stylesheet" href="CssForExchange.css">
+</head>
+<body>
+<h1 id="title">Exchange Foreign Currency</h1>
+<div id="rate">
+Today's Exchange Rate
+	<table id="rate">
+	<tr>
+	<td>HKD</td>
+	<td>1.188</td>
+	</tr>
+	<tr>
+	<td>EUR</td>
+	<td>0.129</td>
+	</tr>
+	<tr>
+	<td>USD</td>
+	<td>0.153</td>
+	</tr>
+	</table>
+</div>
+	<form method="post" action="transfer.php">
+<div id="login">
+	 <fieldset><legend>Login</legend>
+	Customer Name: <input type="text" id="cn" name="cn">
+	Passward: <input type="text" id="pwd" name="pwd">
+</div>
+<div id="main">
+    <fieldset><legend>CURRENCY</legend>    
+            <div>
+                RMB:<input type="number" id="rmb" name="rmb"><br><br>
+				<select id="currency" name="cur">
+					<option value='USD' name='USD'>USD</option>
+					<option value='HKD' name='HKD'>HKD</option>
+					<option value='EUR' name='EUR'>EUR</option>
+                </select><br><br>
+				<input type="submit" onclick="myFuction()" value="Convert"><br><br>			
+				</form>
+				<a href=Index.html>CLICK HERE </a>to back to the Index page.
+            </div>
+			
+</body>
+<script>
+function myFuction(){
+    var x=number(document.getElementById('rmb').value);
+	var y=document.getElementById('rmb').value;
+	alert("Confirm: You need to change "+x+" RMB into "+y);
+}   
+</script>
+</html>

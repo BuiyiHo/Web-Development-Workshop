@@ -1,0 +1,21 @@
+{% extends 'base_stu.html' %}
+
+{% block content %}
+
+<h1>{% block title %} About GPS {% endblock %}</h1>
+
+
+<p>GPS System is a system that from SDW</p>
+
+<p>The GPS is an information system that gather the UIC alumni information from all over the world.</p>
+
+<form method="post">
+    <div class="form-group">
+        <button type="submit" value="changepwd" name="changepwd" class="btn btn-primary">Change my password</button>
+        <button type="submit" value="logout" name="logout" class="btn btn-primary">Logout</button>
+    </div>
+</form>
+{% endblock %}
+
+
+

@@ -1,0 +1,250 @@
+
+@import url("css.css");
+body {
+  background: #f5f5f5;
+}
+
+header, nav, section, article, aside, footer, hgroup {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  background-color: #fff;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.welcome {
+  display: flex;
+  overflow: hidden;
+}
+.welcome .welcome-content {
+  width: 100%;
+  position: relative;
+}
+.welcome .welcome-content .welcome-text h1 {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 1.3px;
+  margin-bottom: 35px;
+  color: #1F2128;
+}
+.welcome .welcome-content .welcome-text p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.53px;
+  color: #606060;
+  margin-bottom: 35px;
+}
+.welcome .welcome-content .slider-wrapper {
+  position: absolute;
+  top: 0px;
+  padding-left: 70px;
+}
+.welcome .welcome-content .slider-wrapper .base {
+  position: absolute;
+  width: 60%;
+  height: 230px;
+  left: 0px;
+  bottom: 0px;
+  background: #fff;
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.13);
+}
+.welcome .welcome-content .slider-wrapper .base .prev {
+  position: absolute;
+  right: 70px;
+  bottom: 33px;
+  font-size: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  z-index: 999;
+}
+.welcome .welcome-content .slider-wrapper .base .next {
+  position: absolute;
+  right: 30px;
+  bottom: 33px;
+  font-size: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  z-index: 999;
+}
+.welcome .welcome-content .slider-wrapper .owl-carousel {
+  position: absolute;
+  z-index: 2;
+}
+.welcome .welcome-content .slider-wrapper .owl-carousel .item .img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: absolute;
+  margin-bottom: 20px;
+}
+.welcome .welcome-content .slider-wrapper .owl-carousel .item .text {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+.welcome .welcome-content .slider-wrapper .owl-carousel .item .text h5 {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.53px;
+  margin-bottom: 10px;
+  color: #1F2128;
+}
+.welcome .welcome-content .slider-wrapper .owl-carousel .item .text p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #606060;
+  letter-spacing: 0.47px;
+  line-height: 26px;
+}
+
+
+@media (max-width: 1400px) {
+  .welcome .welcome-content {
+    margin-top: 100px;
+  }
+}
+@media (max-width: 1200px) {
+  .welcome {
+    padding-top: 60px;
+    padding-bottom: 100px;
+  }
+  .welcome .welcome-content .slider-wrapper .base {
+    width: 100%;
+    left: 15px;
+  }
+}
+@media (max-width: 991px) {
+  .welcome .welcome-content .welcome-text {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .welcome .welcome-content .welcome-text a {
+    margin: auto;
+  }
+}
+
+/* 
+---------------------------------------------
+parallax
+--------------------------------------------- 
+*/
+.half-parallax .parallax-image {
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+.half-parallax .parallax-image:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 2;
+  opacity: 0.2;
+}
+.half-parallax .parallax-items {
+  position: relative;
+  z-index: 3;
+  margin-top: -10px;
+}
+.half-parallax .parallax-items .parallax-item {
+  background: #fff;
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.13);
+  padding: 55px 40px;
+  text-align: center;
+  margin-bottom: 30px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.half-parallax .parallax-items .parallax-item i {
+  font-size: 30px;
+  display: block;
+  color: #1F2128;
+  margin-bottom: 30px;
+}
+.half-parallax .parallax-items .parallax-item .feature-title {
+  font-weight: 400;
+  font-size: 16px;
+  color: #1F2128;
+  letter-spacing: 0.7px;
+  margin-bottom: 15px;
+}
+.half-parallax .parallax-items .parallax-item p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #606060;
+  letter-spacing: 0.88px;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+.half-parallax .parallax-items .parallax-item .dark-btn {
+  margin: auto;
+}
+.half-parallax .parallax-items .parallax-item:hover {
+  margin-top: -10px;
+}
+
+.parallax-counter {
+  min-height: 337px;
+  position: absolute;
+}
+.parallax-counter:before {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 100px;
+  opacity: 0.8;
+  background: #000;
+  opacity: 0.5;
+  z-index: 2;
+  top: -20%;
+  left: -20%;
+}
+
+.parallax-counter .parallax-content .count-item {
+  height: 280px;
+  position: absolute;
+  overflow: hidden;
+}
+.parallax-counter .parallax-content .count-item:hover strong {
+  margin-top: 60px;
+}
+.parallax-counter .parallax-content .count-item strong {
+  display: block;
+  text-align: center;
+  font-weight: 400;
+  font-size: 40px;
+  letter-spacing: 1.72px;
+  margin-bottom: 10px;
+  color: #fff;
+  margin-top: 70px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.parallax-counter .parallax-content .count-item span {
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.86px;
+}
+
+}

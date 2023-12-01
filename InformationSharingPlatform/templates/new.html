@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 align="center" style="color: white;">{% block title %} New Knowledge Point {% endblock %}</h1>
+
+<form method="post" style="color: white;">
+    <div class="form-group">
+        <label for="title" align="center" style="color: white;">Title</label>
+        <input type="text" name="title" placeholder="Title" class="form-control"
+            value="{{ request.form['title'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="content">Knowledge Point</label>
+        <textarea name="content" placeholder="Add your knowledge point"
+            class="form-control">{{ request.form['content'] }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="university">University name</label>
+        <textarea name="university" placeholder="Your University name"
+            class="form-control">{{ request.form['university'] }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="project">project</label>
+        <textarea name="project" placeholder="Your project name"
+            class="form-control">{{ request.form['project'] }}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}

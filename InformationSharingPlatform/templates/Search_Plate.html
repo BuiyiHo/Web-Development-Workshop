@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Welcome to the search page {% endblock %}</h1>
+    <form action="/Search_Plate" method="POST">
+    <div class="form-group">
+        <button type="submit" name="button1" value="page" class="btn btn-primary">Submit</button>
+    </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,61 @@
+input{	height:30px;
+		width:40px;
+}
+
+#SA{height:20px;
+	width:20px;
+}
+
+#cinfo{	height:30px;
+		width:300px;
+}
+
+p{	font-size:30px;
+	font-weight: bold;
+	text-align : center;
+	color:#fff;
+}
+
+h3{	position: relative;
+	margin: 20px 20px;
+	font-size: 40px;
+	margin: 0px 5px 0px 5px;
+	color:#fff;
+}
+
+img{height:300px;
+	width:280px;
+}
+
+
+* {
+    margin : 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    background-color: #0984e3;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    font-family     : 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+}
+
+.Cus_info{
+    text-align: center;
+}
+
+select{
+	width: 70px;
+	height: 30px;
+}
+
+input[type=submit]{
+ 			width: 70px;
+ 			height: 40px;
+ 			background-color: rgb(244,244,244);
+}

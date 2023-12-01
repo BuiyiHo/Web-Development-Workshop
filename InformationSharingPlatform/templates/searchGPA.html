@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="color: white;">{% block title %} Search through GPA {% endblock %}</h1>
+    <form method="post"  style="color: white;" onsubmit="return validInput()">
+        <label for="gpa1">GPA low</label>
+        <input type="txt" name="gpa1" id="gpa1" class="form-control"></input>
+        <label for="gpa2">GPA high</label>
+        <input type="txt" name="gpa2" id="gpa2" class="form-control"></input>
+    <label for="offertype">Offer type</label>
+    <select name="offertype">
+        <option value="taught">taught</option>
+        <option value="research">research</option>
+        <option value="company">company</option>
+    </select>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    </form>
+<script>
+	function validInput(){
+		const input = document.getElementById("gpa1").value;
+        const input1 = document.getElementById("gpa2").value;
+		if(isNaN(input) || isNaN(input1)){
+			alert("Invalid input.")
+			return false;
+		}
+		return ture;
+	}
+</script>
+{% endblock %}

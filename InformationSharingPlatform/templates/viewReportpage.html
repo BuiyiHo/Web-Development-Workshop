@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="background-color: #efecff">
+    <h1 align="center" style="color: white;">{% block title %} Welcome to the yearly report of {{ year }}  {% endblock %}</h1>
+    <h2 align="center" style="color: white;">Distribution of graduation destination in {{ year }}</h2>
+    <img src="data:image/png;base64, {{ plot_url }}">
+<p style="color: white;">The report for Taught Offer</p>
+<table cellpadding="10" cellspacing="5" style="background-color: #b8daff">
+  <thead>
+    <tr>
+      <th>University Name</th>
+      <th>Country</th>
+      <th>QS Ranking</th>
+      <th>Number of Students</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for universityname, place, rank, amount in result %}
+    <tr>
+      <td>{{ universityname }}</td>
+      <td>{{ place }}</td>
+      <td>{{ rank }}</td>
+      <td>{{ amount }}</td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+<p style="color: white;">The report for Research Offer</p>
+<table cellpadding="10" cellspacing="5" style="background-color: #b8daff">
+  <thead>
+    <tr>
+      <th>University Name</th>
+      <th>Country</th>
+      <th>QS Ranking</th>
+      <th>Number of Students</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for universityname, place, rank, amount in Roffer %}
+    <tr>
+      <td>{{ universityname }}</td>
+      <td>{{ place }}</td>
+      <td>{{ rank }}</td>
+      <td>{{ amount }}</td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+    {% for post_offer in offer %}
+    <a href="{{url_for('report.post_offer', offer_id=post_offer['id'])}}">
+        <h2>{{ post_offer['universityname'] }}</h2>
+    </a>
+    <hr>
+    {% endfor %}
+
+
+
+
+<canvas id="myChart"></canvas>
+
+
+<script>
+    const university = JSON.parse('{{ universityname|safe }}');
+  const amount = JSON.parse('{{ amount|safe }}');
+
+
+  const data = [];
+  for (let i = 0; i < university.length; i++) {
+    data.push({ university: university[i], amount: amount[i] });
+  }
+
+  const labels = data.map(d => d.university);
+  const populations = data.map(d => d.amount);
+
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Population',
+        data: populations,
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+
+</body>
+
+{% endblock %}

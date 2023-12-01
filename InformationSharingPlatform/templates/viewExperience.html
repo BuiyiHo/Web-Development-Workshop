@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="color: white;">{% block title %} View Experience {% endblock %}</h1>
+    {% for post2 in experience %}
+    <a href="{{url_for('experience.post2', post_id=post2['id'])}}">
+        <h2 style="color: white;">{{ post2['title'] }}</h2>
+    </a>
+    <span class="badge badge-primary">{{ post2['created'] }}</span>
+    <a href="{{ url_for('experience.edit2', post_id=post2['id']) }}">
+        <span class="badge badge-warning">Edit</span>
+    </a>
+    <hr>
+    {% endfor %}
+{% endblock %}

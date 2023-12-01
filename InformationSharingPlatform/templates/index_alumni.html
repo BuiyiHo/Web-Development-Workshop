@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block header %}
+  <h1 align="center" style="color: white;">{{ title }}</h1>
+{% endblock %}
+
+{% block content %}
+<h1 align="center" style="color: white;">Login success !</h1><br>
+<h2 align="center" style="color: white;">Welcome Alumni!</h2><br>
+  <a class="nav-link" href="{{url_for('UICer.changepwd')}}">Change Password</a><br>
+<a class="navbar-brand" href="{{url_for('experience.view')}}">view employment experience</a><br>
+<a class="navbar-brand" href="{{ url_for('knowledge.Knowledge')}}">View knowledge points</a><br>
+<a class="navbar-brand" href="{{url_for('report.viewreport')}}">View Report</a><br>
+<a class="navbar-brand" href="{{url_for('experience.share_e_experience')}}">Share employment experience</a><br>
+<a class="navbar-brand" href="{{url_for('knowledge.new')}}">Add Knowledge Points</a><br>
+<a class="navbar-brand" href="{{url_for('search.search_u_name')}}">Search through University Name</a><br>
+<a class="navbar-brand" href="{{url_for('search.search_gpa')}}">Search through GPA</a><br>
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="color: white;">{% block title %} View the yearly report {% endblock %}</h1>
+    <form action="{{ url_for('report.viewreport') }}" onsubmit="return validInput()" style="color: white;">
+		<label for="year">Year:</label><br>
+		<input type="text" id="year" name="year"><br>
+		<input type="submit" value="Generate">
+	</form>
+<script>
+	function validInput(){
+		const input = document.getElementById("year").value;
+		if(isNaN(input) || input.length !==4){
+			alert("Invalid input.")
+			return false;
+		}
+		return ture;
+	}
+</script>
+{% endblock %}

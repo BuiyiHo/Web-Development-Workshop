@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="color: white;">{% block title %} Research Offer {% endblock %}</h1>
+
+<form method="post" style="color: white;">
+    <div class="form-group">
+        <label for="date">DATE</label>
+        <input type="text" name="date" placeholder="Date" class="form-control"
+            value="{{ request.form['date'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="gpa">GPA</label>
+        <textarea name="gpa" placeholder="Add your GPA"
+            class="form-control">{{ request.form['gpa'] }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="university">University name</label>
+        <textarea name="university" placeholder="University name"
+            class="form-control">{{ request.form['university'] }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="program">Program name</label>
+        <textarea name="program" placeholder="Program name"
+            class="form-control">{{ request.form['program'] }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="supervisor">Supervisor name</label>
+        <textarea name="supervisor" placeholder="Supervisor name"
+            class="form-control">{{ request.form['supervisor'] }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="topic">Research topic</label>
+        <textarea name="topic" placeholder="Research topic"
+            class="form-control">{{ request.form['topic'] }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="papers">Paper NO.</label>
+        <textarea name="paper" placeholder="Paper NO."
+            class="form-control">{{ request.form['paper'] }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="research">Research NO.</label>
+        <textarea name="research" placeholder="Research"
+            class="form-control">{{ request.form['research'] }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </div>
+</form>
+<form method="post" enctype="multipart/form-data" id="file_upload">
+	<p>图片预览：</p>
+	<img>
+	<p>
+	<input type="file" id="file" name="upload_image" accept="image/gif, image/jpeg, image/png, image/jpg">
+	<input type="button" value="下载图片" onclick="save()" />
+	</p>
+    <p id="info"></p>
+</form>
+<script type="text/javascript">
+			let fileInput = document.getElementById('file');
+			let info = document.getElementById('info');
+			let preview = document.getElementById('image-preview');
+			// 监听change事件:
+			fileInput.addEventListener('change', function() {
+				// 清除背景图片:
+				preview.style.backgroundImage = '';
+				if (!fileInput.value) {
+					info.innerHTML = '没有选择文件';
+					return;
+				}
+				let file = fileInput.files[0];
+				let size = file.size;
+				if (size >= 1 * 1024 * 1024) {
+					alert('文件大小超出限制');
+					info.innerHTML = '文件大小超出限制';
+					return false;
+				}
+				// 获取File信息:
+				info.innerHTML = `文件名称:  + ${file.name}<br>文件大小: ${file.size} <br>上传时间: ${file.lastModifiedDate}`;
+				if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
+					alert('不是有效的图片文件!');
+					return;
+				}
+				// 读取文件:
+				let reader = new FileReader();
+				reader.onload = function(e) {
+					let data = e.target.result;
+					console.log(preview, 'a标签')
+					preview.src = data
+				};
+				// 以DataURL的形式读取文件:
+				reader.readAsDataURL(file);
+
+			});
+
+			function save() {
+
+				var url = preview.src; // 获取图片地址
+				var a = document.createElement('a'); // 创建一个a节点插入的document
+				var event = new MouseEvent('click') // 模拟鼠标click点击事件
+				a.download = 'beautifulGirl' // 设置a节点的download属性值
+				a.href = url; // 将图片的src赋值给a节点的href
+				a.dispatchEvent(event)
+			}
+</script>
+{% endblock %}

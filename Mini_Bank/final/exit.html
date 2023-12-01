@@ -1,0 +1,39 @@
+<html>
+<head>
+<style>
+body{
+background-color:#2c3e50;
+}
+</style>
+<link rel="stylesheet" href="bk.css">
+<title>exit</title>
+<h1 id="h1">Thanks for using our Bank system!</h1>
+<head>
+<body>
+<img src="1.jpg" id="p1"><br>
+<form>
+Enter your CustomerName:
+ <input type="text" id="cname" name="cname" 
+ onfocusin="enterTextBox()" 	
+onfocusout="leaveTextBox()" /><br>
+<button onclick="display()">Submit here</button>
+<script>
+function enterTextBox() {
+    fname.style.background = "yellow";
+	document.getElementById("demo").innerHTML = "输入你的名字";
+}
+
+function leaveTextBox() {
+    fname.style.background = "white";
+	document.getElementById("demo").innerHTML="";
+}
+function display(){
+var x=document.getElementById("cname").value;
+alert(x);
+}
+</script>
+<h2 id="if">If you still don't want to exit,<br>
+<a href=Index.html >CLICK HERE</a><h2>
+
+</body>
+</html>

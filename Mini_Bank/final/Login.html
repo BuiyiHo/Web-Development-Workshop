@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="StyleOfLogin.css">
+</head>
+
+<body>
+    <table>
+        <tr>
+			<td id="Title">
+				<h2>Login Page</h2>
+			</td>
+        </tr>
+		
+		<tr>
+			<td id="login">
+				<br>
+				<nav>
+					<br>
+					<h3 class="smallTitle">Members Sign in</h3><br>
+					<form action="Login.php" method="POST">
+						<input type="text" id="username" name="username" placeholder="Username"><br>
+						
+						<input type="password" id="pwd" name="pwd" placeholder="Password"><br>
+						
+						<input type="checkbox" id="note" name="name" value="details">
+						<label for="note">agree relevant details</label><br>
+						
+						<button type="submit">Login</button><br>
+					</form>
+					<br>
+					<img src="2.jpg" width="326" height="210">
+				</nav>
+			</td>
+			
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			
+			<td id="signUp">
+				<br>
+				<nav>
+					<br>
+					<h3 class="smallTitle">New Members Sign up</h3><br>
+					<form action="SignUp.php" method="POST">
+						<input type="text" id="fname" name="fname" placeholder="First Name">
+						
+						<input type="text" id="lname" name="lname" placeholder="Last Name"><br>
+						
+						<input type="text" id="username" name="username" placeholder="Username">
+						
+						<input type="date" id="birthday" name="birthday" placeholder="Date of Birth"><br>
+						
+						<input type="password" id="pwd" name="pwd" placeholder="Password">
+						
+						<input type="email" id="email" name="email" placeholder="Email"><br>
+						
+						<input type="password" id="cpwd" name="cpwd" placeholder="Confirm Password">
+						
+						<input type="number" id="mobile" name="mobile" placeholder="Mobile Number"><br>
+						
+						
+						<label>Mr:</label>
+						<input type="radio" id="mr" name="title" value="Mr" />
+						<label>Mrs:</label>
+						<input type="radio" id="ms" name="title" value="Mrs" />
+						<label>Dr:</label>
+						<input type="radio" id="dr" name="title" value="Dr" />
+						<label>Prof:</label>
+						<input type="radio" id="prof" name="title" value="Prof" />
+						<label>No Title:</label>
+						<input type="radio" id="no" name="title" value="" checked /><br>
+						
+						<label>Address:</label><br>
+						<textarea class="textarea" name="address" rows="8" cols="44">
+						</textarea><br>
+						
+						<input type="submit" value="Submit" onclick="alert('Thank you for joining in!')">
+						<input type="reset" value="Reset">
+					</form>
+				</nav>
+				
+			</td>
+		</tr>
+		
+		
+		
+	</table>
+</body>
+
+</html>

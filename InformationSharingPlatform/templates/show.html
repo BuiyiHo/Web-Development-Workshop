@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to GPS System {% endblock %}</h1>
+    {% for post in posts %}
+        <p><font size = "3", color = #5f9ea0>Username:</font></p>
+        <p><font size = "5",color = #00008b>{{ post['username'] }}</font></p>
+        <p><font size = "3", color = #5f9ea0>Password:</font></p>
+        <p><font size = "5", color="#00008b">{{ post['password'] }}</font></p>
+    </a>
+    <span class="badge badge-primary">{{ post['created'] }}</span>
+
+    <hr>
+    {% endfor %}
+{% endblock %}

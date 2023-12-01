@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 style="color: white;">{% block title %} {{ post2['title'] }} {% endblock %}</h2>
+<span class="badge badge-primary" style="color: white;">{{ post2['created'] }}</span>
+    <p><font size = "3", color="#ffe4c4">Employment experience:</font></p>
+    <p><font size = "5", color="white">{{ post2['content'] }}</font></p>
+    <p><font size = "3", color="#ffe4c4">Company name:</font></p>
+    <p><font size = "5", color="white">{{ post2['company'] }}</font></p>
+    <p><font size = "3", color="#ffe4c4">Position:</font></p>
+    <p><font size = "5", color="white">{{ post2['job'] }}</font></p>
+<hr>
+<form action="{{ url_for('experience.delete2', post_id=post2['id']) }}" method="POST">
+    <input type="submit" value="Delete" class="btn btn-danger btn-sm"
+        onclick="return confirm('Are you sure to delete?')">
+</form>
+
+{% endblock %}

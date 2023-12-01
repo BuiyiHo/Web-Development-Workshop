@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1 align="center" style="color: white;">{{ title }}</h1>
+{% endblock %}
+<body style="color: white;" background=url_for('static', filename='images/UIC.jpg', _external=True>
+{% block content %}
+  <h1 align="center" style="color: white;">Login success !</h1><br>
+  <h2 align="center" style="color: white;">Welcome Administrator!</h2><br>
+<a style="color: white;"class="navbar-brand" href="{{url_for('UICer.changepwd')}}">Change Password</a><br>
+<a style="color: white;"class="navbar-brand" href="{{url_for('search.search_gpa')}}">Search through GPA</a><br>
+<a style="color: white;"class="navbar-brand" href="{{url_for('search.search_u_name')}}">Search through University Name</a><br>
+<a style="color: white;"class="navbar-brand" href="{{url_for('UICer.show')}}">Show Users</a><br>
+<a style="color: white;"class="navbar-brand" href="{{url_for('report.makereport')}}">Make Report</a><br>
+<a style="color: white;"class="navbar-brand" href="{{ url_for('knowledge.Knowledge')}}">View knowledge points</a><br>
+<a style="color: white;"class="navbar-brand" href="{{url_for('experience.view')}}">View Employment Experience</a><br>
+</body>
+{% endblock %}
